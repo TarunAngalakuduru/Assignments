@@ -1,0 +1,140 @@
+Exercise-1
+
+1. mkdir test (To create a folder named test).
+
+2. touch employeelist skillset (To create employeelist,skillset files).
+
+3. mkdir test2 (To create a folder named test2)
+   - ln skillset hardlink (To create hardlink for the file skillset).
+   - ln -s skillset symlink1 (To create symbolic link for the file skillset).
+   - rm skillset (To remove skillset file).
+   - cat symlink (gets an error says that "No such file or directory").
+   - cat hardlink (shows the contents of skillset file).
+
+Symbolic link - creates another file and it contains contents of the linked file.
+Hardlink - It is other name for the linked file.
+
+4. chmod g+rw user2 (To grant read & write permission for user2 group).
+   user2 group can read and write the file.
+
+5. chmod g-w user2 (To revoke write permission for user2 group).
+   user2 group can only read the file.
+
+6. chmod o+w user2 (To grant write permission for user2 others).
+   user2 others can now write in the user2 file.
+
+7. chmod o-w user2 (To revoke write permission for user2 others).
+   user2 others can not write in the user2 file.
+
+8. chgrp user3 employeelist (To change the group name of employeelist to user3).
+   user3 is having access to employeelist.
+
+9. chown user5 file1 (To change the owner of the file1 to user5).
+   user5 is now the owner of the file1.
+
+10. wc -l employeelist (To count how many [lines]employees are there in the file employeelist).
+
+ 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  
+Exercise - 2
+
+1. touch file1 (To create a file named file1).
+
+2. cat > file1 (To add data[lines] to the file1).
+
+3. cat >> file2 (To create file2 with few lines).
+
+4. cat file1 file2 (To display contents of both file1 & file2).
+
+5. cat file1 file2 (To Concatenate both File1 & 2)
+   - It prints the contents of both files in the order of file names.
+
+6. cat file1 file2 > file3 (To concatenate file1, file2 into file3).
+
+7. cat file1 file2 file3 file4 file5 (To read files named file1,file2,file3,file4,file5).
+   - It prints the contents of file1,file2,file3(concatenated) and shows error message for file4,file5.
+
+8. cat file1 file2 file3 file4 file5  2> efile (prints contents in file1,file2,file3 and writes error message in the file efile).
+   - efile contains error message.
+
+9. cat file1 file2 file3 file4 file5 > file10 2>&1 (To Concatenate name File1 to 5 and store it in File 10. if any errors, log them in the same file).
+
+10. cp file1 file6 2> errorlog (To Copy File1 to File6. Add the errors to “errorlog”).
+    - This command copies contents of file1 to file6. If file6 is not there it creates and copies the contents of file1.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Exercise - 3
+
+1. head -25 file11 | tail -15 (To read 10th to 25th lines in file11).
+
+2. head -10 file11 | tail -1 (To read 10th line from file11).
+
+3. ls -ltr | tail -1 (To list only the recently modified file in the current directory).
+
+4. ls -lS | tail -1 (To List only the smallest file in the current directory).
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Exercise - 4
+
+1. ls | grep a (To list files or folders containing letter "A").
+   grep a file1 (To list the lines in file1 containing letter "A").
+
+2. grep ^the file1 (To list the lines containing The at the beginning).
+
+3. grep '\.$' file1 (To list the lines ending with .)
+
+4. grep '^.[abc]' file1 (To list lines with a,b or c as the second letter).
+
+5. grep de*f file1 (To list lines which contain def , deef or deeeef). 	
+
+6. grep -v ^[0-9] file1 (To list the lines not having numbers at the beginning). 
+
+7. grep -n ^$ file1 | wc -l (To list & count empty lines in a file).
+
+8. ls -l | grep '^d' (To list only directories).
+   ls -d */ (To list only directories).
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Exercise - 5 
+
+1. ls | sort -r (To sort the file based on the filename in descending order).
+
+2. ls -i | sort -n (To sort the file based only on the inode count).
+
+3. ls -l | sort -kr 3 (To sort the file based on the user name and group name in reverse order).
+
+4. ls -l | sort -k 5n > sortedfile (To sort the file based on the file size and store the output in a file called sortedfile).
+
+5. sleep 100& (To run a sleep command at the background)
+   - The parent process id of the sleep command is bash.
+
+6. nohup sleep 100& (To run a sleep command at the background using nohup)
+   - The parent process id of the sleep command is bash.
+   - After logout the parent process id of the sleep command is systemd.
+
+7. at now +10 day [Enter]
+   at > ps -l > processfile (To write the processes that will be running after 10 days into a file ‘processfile’).
+
+ 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
